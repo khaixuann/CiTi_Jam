@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CiTi — Spread the good stuff</title>
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0709">
+<meta name="description" content="CiTi — a new range of jams and spreads. Strawberry, raspberry, pineapple, orange marmalade, chocolate spread and peanut butter. 240g and 450g.">
+<meta property="og:title" content="CiTi — Spread the good stuff">
+<meta property="og:description" content="A new range of jams and spreads. Available on Lazada and Shopee.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%93%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/raspberry.webp" type="image/webp">
+<link rel="preload" as="image" href="images/strawberry.webp" type="image/webp">
+<link rel="preload" as="image" href="images/pineapple.webp" type="image/webp">
+
+<script>(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,800&family=Instrument+Serif:ital@0;1&display=swap';document.head.appendChild(l)})()</script>
+<style>
+:root{
+  color-scheme: dark;
+  box-sizing: border-box;
+  --bg:#0a0709;
+  --bg2:#120c0f;
+  --ink:#f6efe9;
+  --mute:rgba(246,239,233,.58);
+  --line:rgba(246,239,233,.12);
+  --accent:#e11d48;
+  --glow:rgba(225,29,72,.35);
+  --sans:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.035;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;justify-content:space-between;align-items:center;
+  padding:calc(18px + env(safe-area-inset-top,0px)) clamp(20px,4vw,56px) 30px;background:linear-gradient(180deg,rgba(10,7,9,.78),rgba(10,7,9,0))}
+.logo{font-weight:800;letter-spacing:-.04em;font-size:26px;text-decoration:none;color:#fff}
+.logo i{font-style:normal;color:#fff;opacity:.9}
+nav .links{display:flex;gap:28px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+nav .links a{text-decoration:none;color:#fff;opacity:.85}
+nav .links a:hover{opacity:1}
+@media(max-width:640px){nav .links a:not(:last-child){display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;overflow:hidden;isolation:isolate;
+  background:radial-gradient(60% 55% at 50% 58%,rgba(225,29,72,.28),transparent 70%),var(--bg)}
+.hero .big{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font-weight:800;letter-spacing:-.06em;
+  font-size:clamp(150px,34vw,520px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(246,239,233,.16);
+  white-space:nowrap;user-select:none;z-index:-1}
+.stage{position:relative;width:min(92vw,900px);height:min(56vh,520px);margin-top:-2vh;--mx:0;--my:0;--sy:0}
+.stage img{position:absolute;bottom:0;will-change:transform;opacity:0;
+  animation:rise 1.4s cubic-bezier(.2,.8,.2,1) forwards}
+.stage .j-c{left:50%;height:100%;transform:translate(-50%,0)}
+.stage .j-l{left:50%;height:78%;margin-left:-38%;animation-delay:.25s}
+.stage .j-r{left:50%;height:78%;margin-left:12%;animation-delay:.4s}
+.stage .j-c{animation-delay:.1s}
+@keyframes rise{from{opacity:0;translate:0 90px;scale:.92}to{opacity:1;translate:0 0;scale:1}}
+.stage .floor{left:50%;bottom:-3%;width:104%;height:9%;opacity:0;animation:fade 2s .5s forwards}
+@keyframes fade{to{opacity:1}}
+.hero-copy{position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);bottom:calc(34px + env(safe-area-inset-bottom,0px));
+  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.hero h1{margin:0;font-weight:300;font-size:clamp(34px,6vw,84px);line-height:.95;letter-spacing:-.035em;max-width:11ch}
+.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
+.hero p{margin:0;max-width:300px;color:var(--mute);font-size:15px;line-height:1.55}
+.scrollcue{position:absolute;top:50%;right:clamp(14px,2vw,32px);writing-mode:vertical-rl;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
+@media(max-width:640px){.stage{height:34vh;margin-top:-18vh}.stage .j-l{margin-left:-41%}.stage .j-r{margin-left:9%}.scrollcue{display:none}.hero-copy{flex-direction:column;align-items:flex-start}}
+
+/* MARQUEE */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:22px 0;background:var(--bg2)}
+.marquee .track{display:flex;gap:48px;width:max-content;animation:slide 38s linear infinite;
+  font-weight:800;font-size:clamp(28px,5vw,64px);letter-spacing:-.03em;text-transform:uppercase}
+.marquee span{display:flex;align-items:center;gap:48px;white-space:nowrap}
+.marquee span::after{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent)}
+.marquee span:nth-child(even){color:transparent;-webkit-text-stroke:1px rgba(246,239,233,.5)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* SHOWCASE (pinned) */
+.showcase{position:relative;height:640vh;height:calc(100svh*6.4)}
+.pin{position:sticky;top:0;height:100vh;height:100svh;contain:layout paint;overflow:hidden;display:grid;place-items:center;transition:background .8s ease}
+.pin .halo{position:absolute;width:min(90vw,820px);aspect-ratio:1;border-radius:50%;opacity:.55;transition:background .8s ease;
+  background:radial-gradient(circle,var(--glow),transparent 62%)}
+.pin .ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:800;letter-spacing:-.05em;line-height:.8;white-space:nowrap;
+  font-size:clamp(90px,22vw,340px);color:transparent;-webkit-text-stroke:1.5px rgba(246,239,233,.1);text-transform:uppercase;transition:opacity .5s}
+.jars{position:relative;width:min(70vw,420px);height:min(64vh,620px)}
+.jw{position:absolute;left:50%;bottom:0;height:100%;will-change:transform,opacity}
+.jw img{display:block;height:100%;width:auto;max-width:none}
+.jw .rf{position:absolute;left:0;top:100%;transform:scaleY(-1);opacity:.17;filter:none;
+  -webkit-mask-image:linear-gradient(to top,rgba(0,0,0,.95),transparent 38%);mask-image:linear-gradient(to top,rgba(0,0,0,.95),transparent 38%)}
+.floor{position:absolute;left:50%;bottom:-2%;width:96%;height:8%;transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.85),rgba(0,0,0,.35) 42%,transparent 70%)}
+.info{position:absolute;left:clamp(20px,4vw,56px);bottom:calc(40px + env(safe-area-inset-bottom,0px));max-width:min(420px,70vw)}
+.info .no{font-size:12px;letter-spacing:.3em;color:var(--mute)}
+.info h2{margin:10px 0 6px;font-weight:300;font-size:clamp(34px,5.4vw,76px);line-height:.95;letter-spacing:-.04em;transition:opacity .35s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.info .ms,.info p,.info .no{transition:opacity .35s ease}
+.info h2 em{font-family:var(--serif);font-weight:400}
+.info .ms{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,26px);color:var(--accent);filter:brightness(1.25)}
+.info p{margin:14px 0 0;color:var(--mute);font-size:15px;line-height:1.6;max-width:36ch}
+.dots{position:absolute;right:clamp(16px,3vw,44px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px}
+.dots button{all:unset;cursor:pointer;width:9px;height:9px;border-radius:50%;border:1px solid rgba(246,239,233,.5);transition:.3s}
+.dots button.on{background:var(--ink);transform:scale(1.5)}
+@media(max-width:640px){
+  .info{left:20px;right:20px;max-width:none;bottom:calc(28px + env(safe-area-inset-bottom,0px))}
+  .info p{display:none}
+  .jars{height:min(46vh,420px);margin-bottom:22vh}
+  .dots{flex-direction:row;top:auto;bottom:calc(10px + env(safe-area-inset-bottom,0px));right:50%;transform:translateX(50%)}
+}
+
+/* INGREDIENTS */
+section.pad{padding:clamp(80px,14vw,180px) clamp(20px,4vw,56px)}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-bottom:22px}
+.ing h2,.use h2,.faq h2,.cta h2{margin:0;font-weight:300;font-size:clamp(40px,8vw,128px);line-height:.92;letter-spacing:-.045em}
+.ing h2 em,.use h2 em,.faq h2 em,.cta h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
+.ing-grid{margin-top:clamp(40px,6vw,90px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.ing-grid div{padding:28px 24px 34px 0;border-right:1px solid var(--line)}
+.ing-grid div:not(:first-child){padding-left:24px}
+.ing-grid div:last-child{border-right:0}
+.ing-grid b{display:block;font-size:12px;letter-spacing:.2em;color:var(--mute);font-weight:500;margin-bottom:60px}
+.ing-grid h3{margin:0 0 10px;font-size:clamp(22px,2.6vw,34px);font-weight:500;letter-spacing:-.03em}
+.ing-grid p{margin:0;color:var(--mute);line-height:1.55;font-size:15px}
+@media(max-width:860px){.ing-grid{grid-template-columns:1fr 1fr}.ing-grid div{border-bottom:1px solid var(--line)}.ing-grid div:nth-child(2n){border-right:0}.ing-grid div:nth-child(odd){padding-left:0}.ing-grid div:nth-child(even){padding-left:24px}.ing-grid b{margin-bottom:28px}}
+.badges{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px}
+.badges span{border:1px solid var(--line);border-radius:99px;padding:10px 18px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+
+/* LINEUP */
+.line{background:var(--bg2);border-top:1px solid var(--line)}
+.grid{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}}
+.card{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:1px solid var(--line);isolation:isolate;
+  background:radial-gradient(75% 52% at 50% 36%,var(--c),transparent 74%),linear-gradient(180deg,#0e090c 0,#0e090c 64%,#1d1316 100%);
+  transition:border-color .5s;will-change:transform}
+.card::before{content:"";position:absolute;left:0;right:0;top:66%;height:1px;background:linear-gradient(90deg,transparent,rgba(246,239,233,.2),transparent)}
+.card:hover{border-color:rgba(246,239,233,.3)}
+.card .obj{position:absolute;left:50%;bottom:31%;height:56%;transform:translateX(-50%);isolation:isolate;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.card .obj img{display:block;height:100%;width:auto;max-width:none;filter:drop-shadow(0 14px 16px rgba(0,0,0,.45))}
+.card .obj .rf{position:absolute;left:0;top:100%;transform:scaleY(-1);opacity:.2;filter:none;
+  -webkit-mask-image:linear-gradient(to top,rgba(0,0,0,.95),transparent 40%);mask-image:linear-gradient(to top,rgba(0,0,0,.95),transparent 40%)}
+.card .obj .sh{position:absolute;left:50%;bottom:-3%;width:136%;height:9%;transform:translateX(-50%);z-index:-1;
+  background:radial-gradient(ellipse,rgba(0,0,0,.85),rgba(0,0,0,.35) 42%,transparent 70%);transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s}
+.card:hover .obj{transform:translateX(-50%) translateY(-9px)}
+.card:hover .obj .sh{transform:translateX(-50%) scale(.88);opacity:.6}
+.card .t{position:absolute;left:22px;bottom:18px;right:22px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.card .t b{font-weight:500;font-size:clamp(17px,1.8vw,22px);letter-spacing:-.02em}
+.card .t i{font-family:var(--serif);color:var(--mute);font-size:15px}
+
+/* USE */
+.use .rows{margin-top:clamp(40px,6vw,80px);border-top:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);
+  font-size:clamp(26px,4.6vw,64px);font-weight:300;letter-spacing:-.04em;transition:padding .4s,color .4s}
+.row small{font-size:14px;letter-spacing:.04em;color:var(--mute);max-width:26ch;text-align:right;font-weight:400}
+.row:hover{padding-left:24px;color:#fff}
+.row em{font-family:var(--serif)}
+
+/* FAQ */
+.faq{background:var(--bg2);border-top:1px solid var(--line)}
+.faq .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:60px}
+@media(max-width:860px){.faq .wrap{grid-template-columns:1fr;gap:36px}}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:clamp(18px,2vw,26px);letter-spacing:-.02em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:28px;line-height:1;transition:transform .3s;color:var(--mute)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:14px 0 0;color:var(--mute);line-height:1.65;max-width:52ch}
+
+/* CTA */
+.cta{text-align:center;position:relative;overflow:hidden;isolation:isolate;
+  background:radial-gradient(50% 60% at 50% 100%,rgba(225,29,72,.35),transparent 70%),var(--bg)}
+.cta h2{font-size:clamp(48px,11vw,180px)}
+.cta p{margin:28px auto 36px;max-width:42ch;color:var(--mute);line-height:1.6}
+.btn{display:inline-flex;gap:12px;align-items:center;padding:18px 34px;border-radius:99px;background:var(--ink);color:#111;text-decoration:none;font-weight:500;letter-spacing:.02em;transition:transform .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(225,29,72,.45)}
+.sizes{display:flex;justify-content:center;align-items:center;gap:clamp(24px,5vw,64px);margin:44px 0 30px}
+.sizes b{display:block;font-weight:300;font-size:clamp(54px,9vw,120px);letter-spacing:-.05em;line-height:1}
+.sizes span{display:block;margin-top:8px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
+.sizes .dv{width:1px;height:clamp(60px,8vw,110px);background:var(--line)}
+.where{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}
+.where small{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-right:6px}
+.where span{border:1px solid rgba(246,239,233,.35);border-radius:99px;padding:11px 22px;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+footer{padding:36px clamp(20px,4vw,56px) calc(36px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.3s cubic-bezier(.16,1,.3,1),transform 1.3s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.marquee .track{animation:none}.rv{opacity:1;transform:none;transition:none}.stage img{animation:none;opacity:1}
+}
+@media(max-width:860px),(hover:none){
+  .grain{display:none}
+  .jw .rf,.card .obj .rf{display:none}
+  .pin .ghost{display:none}
+  .showcase{height:740vh;height:calc(100svh*7.4)}
+}
+@media(max-height:520px){
+  .hero{place-items:center end}
+  .stage{height:60vh;width:52vw;margin:8vh 4vw 0 0}
+  .hero h1{font-size:clamp(28px,9vh,48px)}
+  .hero-copy{flex-direction:column;align-items:flex-start;gap:10px;bottom:18px;right:auto;max-width:42vw}
+  .hero p{font-size:13px;max-width:34ch}
+  .jars{height:62vh;left:24vw}
+  .info{max-width:38vw;bottom:18px}
+  .info h2{font-size:clamp(26px,9vh,44px)}
+  .info p{display:none}
+  .scrollcue{display:none}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav>
+  <a class="logo" href="#top">CiTi<i>.</i></a>
+  <div class="links"><a href="#flavours">Flavours</a><a href="#inside">Inside</a><a href="#range">Range</a><a href="#hello">Hello</a></div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="big" aria-hidden="true">CiTi</div>
+  <div class="stage" id="stage">
+    <div class="floor"></div>
+    <img class="j-l" data-d="-26" data-k="strawberry" decoding="async" alt="CiTi Strawberry Jam">
+    <img class="j-r" data-d="22" data-k="pineapple" decoding="async" alt="CiTi Pineapple Jam">
+    <img class="j-c" data-d="40" data-k="raspberry" decoding="async" alt="CiTi Raspberry Jam">
+  </div>
+  <div class="hero-copy">
+    <h1>Spread the <em>good</em> stuff.</h1>
+    <p>Introducing CiTi — a new range of jams and spreads, made to turn the simplest breakfast into the best part of your day.</p>
+  </div>
+  <div class="scrollcue">Scroll</div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Strawberry</span><span>Raspberry</span><span>Pineapple</span><span>Orange Marmalade</span><span>Chocolate Spread</span><span>Peanut Butter</span>
+    <span>Strawberry</span><span>Raspberry</span><span>Pineapple</span><span>Orange Marmalade</span><span>Chocolate Spread</span><span>Peanut Butter</span>
+  </div>
+</div>
+
+<!-- PINNED FLAVOUR SHOWCASE -->
+<section class="showcase" id="flavours">
+  <div class="pin" id="pin">
+    <div class="halo" id="halo"></div>
+    <div class="ghost" id="ghost">Berry</div>
+    <div class="jars" id="jars"></div>
+    <div class="info">
+      <div class="no" id="no">01 / 06</div>
+      <h2 id="name"></h2>
+      <div class="ms" id="ms"></div>
+      <p id="desc"></p>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="pad ing" id="inside">
+  <div class="eyebrow rv">What goes into every jar</div>
+  <h2 class="rv">A short list.<br><em>A big taste.</em></h2>
+  <!-- TODO (owner): confirm against the real CiTi label before launch. Generic jam description. -->
+  <div class="ing-grid">
+    <div class="rv"><b>01</b><h3>Fruit</h3><p>Strawberry, raspberry, pineapple and orange — the stars of the jar, chosen for colour and flavour.</p></div>
+    <div class="rv"><b>02</b><h3>Sugar</h3><p>Balances the fruit and gives every spoonful its glossy, spreadable body.</p></div>
+    <div class="rv"><b>03</b><h3>Pectin</h3><p>The classic setting ingredient in jam, for a soft set that spreads without running.</p></div>
+    <div class="rv"><b>04</b><h3>Citric acid</h3><p>A bright, fresh edge that keeps the sweetness lively.</p></div>
+  </div>
+  <div class="badges rv">
+    <span>Halal logo</span><span>MeSTI</span><span>Made in Malaysia</span>
+  </div>
+</section>
+
+<!-- LINEUP -->
+<section class="pad line" id="range">
+  <div class="eyebrow rv">The range</div>
+  <h2 class="rv" style="margin:0;font-weight:300;font-size:clamp(40px,8vw,128px);line-height:.92;letter-spacing:-.045em">Six ways to<br><em style="font-family:var(--serif);font-weight:400">start the day.</em></h2>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- USE -->
+<section class="pad use">
+  <div class="eyebrow rv">Made for moments</div>
+  <h2 class="rv">On <em>everything.</em></h2>
+  <div class="rows">
+    <div class="row rv">Warm toast <small>Thick, golden, still steaming.</small></div>
+    <div class="row rv">Fluffy pancakes <small>Stack them. Swirl it.</small></div>
+    <div class="row rv">Yoghurt &amp; granola <small>A spoonful of colour.</small></div>
+    <div class="row rv">Crisp waffles <small>Fruit, chocolate or peanut.</small></div>
+    <div class="row rv">Bakes &amp; <em>thumbprints</em> <small>Fillings that hold their shape.</small></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pad faq">
+  <div class="wrap">
+    <div><div class="eyebrow rv">Questions</div><h2 class="rv">Good to <em>know.</em></h2></div>
+    <div class="rv">
+      <details><summary>Where is CiTi made?</summary><p>CiTi is made in Malaysia — you'll find “Made in Malaysia” on the label.</p></details>
+      <details><summary>Is CiTi halal?</summary><p>The jars carry the Halal logo on the label.</p></details>
+      <details><summary>How should I store it?</summary><p>Keep it in a cool, dry place. Once opened, refrigerate and use a clean, dry spoon each time.</p></details>
+      <details><summary>Where can I buy it?</summary><p>You can order CiTi online on Lazada or Shopee. Retailers and distributors are welcome to get in touch.</p></details>
+      <details><summary>What sizes does it come in?</summary><p>CiTi comes in two jar sizes: 240g and 450g.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pad cta" id="hello">
+  <div class="eyebrow rv">New from CiTi</div>
+  <h2 class="rv">Your morning,<br><em>upgraded.</em></h2>
+  <div class="sizes rv"><div><b>240g</b><span>Jar size</span></div><div class="dv"></div><div><b>450g</b><span>Jar size</span></div></div>
+  <div class="where rv"><small>Available on</small><span>Lazada</span><span>Shopee</span></div>
+  <p class="rv">Order online and bring the good stuff to your table. Retailers and distributors are welcome to get in touch.</p>
+  <a class="btn rv" href="#top">Back to the jars <span>↑</span></a>
+</section>
+<footer><span>© CiTi</span><span>Jams &amp; spreads · Made in Malaysia</span></footer>
+
+<script>
+(function(){
+  var RAW={chocolate:"images/chocolate.webp",peanut:"images/peanut.webp",raspberry:"images/raspberry.webp",pineapple:"images/pineapple.webp",orange:"images/orange.webp",strawberry:"images/strawberry.webp"};var IMG={};
+    Object.keys(RAW).forEach(function(k){IMG[k]=RAW[k]});
+  [].forEach.call(document.querySelectorAll('img[data-k]'),function(im){im.src=IMG[im.dataset.k]});
+  var F=[
+    {k:'strawberry',n:'Strawberry',ms:'Jem Strawberi',g:'Berry',c:'#e11d48',d:'Sweet, juicy and unmistakably summer. The jam you reach for first.'},
+    {k:'raspberry', n:'Raspberry', ms:'Jem Raspberi', g:'Raspberry',c:'#b3123f',d:'Bold and a little tart, with a deep ruby colour that looks as good as it tastes.'},
+    {k:'pineapple', n:'Pineapple', ms:'Jem Nenas', g:'Sunny',c:'#f2b400',d:'Golden, tropical and bright — a sunny spoonful for any slice of bread.'},
+    {k:'orange',    n:'Orange <em>Marmalade</em>',ms:'Jem Marmalad Oren',g:'Citrus',c:'#ff7a00',d:'Zesty and glowing amber. The classic breakfast marmalade, done properly.'},
+    {k:'chocolate', n:'Chocolate <em>Spread</em>',ms:'Sapuan Coklat',g:'Cocoa',c:'#8a4a2b',d:'Smooth and creamy, made for waffles, toast and straight off the spoon.'},
+    {k:'peanut',    n:'Creamy <em>Peanut Butter</em>',ms:'Mentega Kacang Halus',g:'Creamy',c:'#d9a35f',d:'Rich, silky and nutty — a satisfying spread for toast and sandwiches.'}
+  ];
+  function rgba(hex,a){var n=parseInt(hex.slice(1),16);return 'rgba('+(n>>16)+','+((n>>8)&255)+','+(n&255)+','+a+')'}
+  var $=function(i){return document.getElementById(i)};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var FANCY=matchMedia('(min-width:861px) and (hover:hover)').matches;
+  // build showcase jars + dots
+  var jars=$('jars'),dots=$('dots'),els=[];
+  var fl=document.createElement('div');fl.className='floor';jars.appendChild(fl);
+  F.forEach(function(f,i){
+    var w=document.createElement('div');w.className='jw';
+    var im=new Image();im.src=IMG[f.k];im.alt='CiTi '+f.n.replace(/<[^>]+>/g,'');
+    var rf=new Image();rf.src=IMG[f.k];rf.className='rf';rf.alt='';rf.setAttribute('aria-hidden','true');
+    w.appendChild(im);if(FANCY)w.appendChild(rf);jars.appendChild(w);els.push(w);
+    var b=document.createElement('button');b.setAttribute('aria-label','Show '+f.k);b.onclick=function(){
+      var s=$('flavours'),top=s.offsetTop,span=s.offsetHeight-innerHeight;
+      scrollTo({top:top+span*((i+.5)/F.length),behavior:'smooth'})};dots.appendChild(b);
+  });
+
+  // lineup cards
+  var grid=$('grid');
+  F.forEach(function(f){
+    var c=document.createElement('div');c.className='card rv';c.style.setProperty('--c',rgba(f.c,.40));
+    c.innerHTML='<div class="obj"><img alt="" src="'+IMG[f.k]+'">'+(FANCY?'<img class="rf" alt="" aria-hidden="true" src="'+IMG[f.k]+'">':'')+'<i class="sh"></i></div><div class="t"><b>'+f.n.replace(/<[^>]+>/g,'')+'</b><i>'+f.ms+'</i></div>';
+    var tx=0,ty=0,cx=0,cy=0,raf=0;
+    function tick(){cx+=(tx-cx)*.12;cy+=(ty-cy)*.12;c.style.transform='perspective(900px) rotateY('+cx+'deg) rotateX('+cy+'deg)';
+      if(Math.abs(tx-cx)>.02||Math.abs(ty-cy)>.02)raf=requestAnimationFrame(tick);else raf=0}
+    if(matchMedia('(hover:hover)').matches){
+    c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*8;ty=-((e.clientY-r.top)/r.height-.5)*8;if(!raf)raf=requestAnimationFrame(tick)});
+    c.addEventListener('mouseleave',function(){tx=0;ty=0;if(!raf)raf=requestAnimationFrame(tick)});
+    }
+    grid.appendChild(c);
+  });
+
+  // pinned scroll (eased)
+  var sc=$('flavours'),pin=$('pin'),last=-1,sp=null,lastT=0;
+  var nameEl=$('name'),msEl=$('ms'),descEl=$('desc'),noEl=$('no'),ghost=$('ghost');
+  var swapT=0;
+  function setActive(i){
+    if(i===last)return;last=i;var f=F[i];
+    nameEl.style.opacity=0;nameEl.style.transform='translateY(16px)';msEl.style.opacity=0;descEl.style.opacity=0;noEl.style.opacity=0;
+    clearTimeout(swapT);
+    swapT=setTimeout(function(){nameEl.innerHTML=f.n;msEl.textContent=f.ms;descEl.textContent=f.d;noEl.textContent=('0'+(i+1))+' / 0'+F.length;ghost.textContent=f.g;
+      nameEl.style.opacity=1;nameEl.style.transform='none';msEl.style.opacity=1;descEl.style.opacity=1;noEl.style.opacity=1},300);
+    document.documentElement.style.setProperty('--accent',f.c);
+    document.documentElement.style.setProperty('--glow',rgba(f.c,.55));
+    pin.style.background='linear-gradient(180deg,'+rgba(f.c,.10)+',#0a0709 70%)';
+    [].forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===i)});
+  }
+  function sm(x){x=Math.min(1,Math.max(0,x));return x*x*(3-2*x)}
+  function frame(now){
+    var dt=lastT?Math.min(.05,(now-lastT)/1000):.016;lastT=now;
+    var r=sc.getBoundingClientRect(),span=sc.offsetHeight-pin.offsetHeight;
+    var p=Math.min(1,Math.max(0,-r.top/span));var target=p*F.length;
+    if(sp===null||reduce)sp=target;else{sp+=(target-sp)*(1-Math.exp(-dt*6.5));if(Math.abs(target-sp)<.0004)sp=target}
+    if(sp===frame.rendered)return;
+    var pos=sp;
+    var cur=Math.min(F.length-1,Math.max(0,Math.floor(pos)));
+    if(r.top<innerHeight&&r.bottom>0){setActive(cur)}
+    var mob=innerWidth<640;
+    els.forEach(function(el,i){
+      var o=pos-i-.5,a=Math.abs(o);
+      var x=o*(mob?85:62);
+      var rot=o*-14;
+      var s=1-Math.min(a,1)*.16;
+      var op=sm(1-a*1.7);
+      el.style.visibility=(reduce?i!==cur:op<.01)?'hidden':'visible';
+      el.style.opacity=reduce?(i===cur?1:0):op;
+      el.style.transform='translate3d(calc(-50% + '+x+'%),0,0) rotate('+rot+'deg) scale('+s+')';
+    });
+    ghost.style.transform='translate(calc(-50% + '+((.5-(pos%1))*90)+'px),-50%)';
+    frame.rendered=sp;
+  }
+
+  // hero parallax
+  var hc=document.querySelector('.hero-copy');
+  var stage=$('stage'),hi=[].slice.call(stage.querySelectorAll('img')),mx=0,my=0,tx=0,ty=0;
+  addEventListener('mousemove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+  var lastSy=-1;
+  function hero(){
+    tx+=(mx-tx)*.06;ty+=(my-ty)*.06;
+    var sy=Math.min(scrollY,innerHeight);
+    if(Math.abs(mx-tx)<.0008&&Math.abs(my-ty)<.0008&&sy===lastSy)return;
+    lastSy=sy;
+    hi.forEach(function(el){
+      var d=parseFloat(el.dataset.d)||20;
+      var base=el.classList.contains('j-c')?'translate(-50%,0)':'translate(0,0)';
+      el.style.transform=base+' translate('+(tx*d)+'px,'+(ty*d*.6-sy*d*.012)+'px)';
+    });
+    document.querySelector('.hero .big').style.transform='translate(-50%,calc(-50% + '+(sy*.25)+'px))';
+    var k=Math.max(0,1-sy/(innerHeight*.75));
+    hc.style.opacity=k;hc.style.transform='translateY('+(sy*.18)+'px)';stage.style.opacity=.35+.65*k;
+  }
+
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  [].forEach.call(document.querySelectorAll('.rv'),function(el,i){el.style.transitionDelay=((i%4)*70)+'ms';io.observe(el)});
+
+  function loop(now){frame(now||performance.now());if(!reduce)hero();requestAnimationFrame(loop)}
+  addEventListener('resize',function(){frame.rendered=null;lastSy=-1},{passive:true});
+  setActive(0);requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
